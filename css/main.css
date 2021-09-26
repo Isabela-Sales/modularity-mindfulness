@@ -25,3 +25,74 @@ img {
   display: block;
   width: 100%;
 }
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  padding: .5rem;
+}
+
+li a {
+  color: #3783a3;
+  font-size: 1.5rem;
+}
+
+.logo {
+  text-align: center;
+}
+
+.intro {
+  border-top: .2rem solid #e2e2e2;
+  border-bottom: .2rem solid #e2e2e2;
+  margin: 1.5rem;
+  max-width: 30em;
+  text-align: center;
+}
+
+.button {
+  color: #3783a3;
+  text-decoration: none;
+  border: .2rem solid #3783a3;
+  border-radius: .3rem;
+  padding: .5rem;
+}
+
+footer {
+  border-top: .2rem solid #e2e2e2;
+  margin: 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.intro p {
+  font-size: 1.125rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.japanese {
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 608px) {
+  header {
+    display: grid;
+    grid-template-areas:
+      "logo nav"
+      "banner banner"
+  }
+}
