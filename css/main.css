@@ -26,13 +26,23 @@ img {
   width: 100%;
 }
 
+main {
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+    "intro"
+    "viewing"
+    "gravel"
+    "symbolism"
+}
+
 ul {
   list-style-type: none;
   text-align: center;
 }
 
 li {
-  display: inline;
+  display: inline-block;
   padding: .5rem;
 }
 
@@ -46,11 +56,24 @@ li a {
 }
 
 .intro {
+  grid-area: intro;
   border-top: .2rem solid #e2e2e2;
   border-bottom: .2rem solid #e2e2e2;
   margin: 1.5rem;
   max-width: 30em;
   text-align: center;
+}
+
+.viewing {
+  grid-area: viewing;
+}
+
+.gravel {
+  grid-area: gravel;
+}
+
+.symbolism {
+  grid-area: symbolism;
 }
 
 .button {
@@ -59,6 +82,7 @@ li a {
   border: .2rem solid #3783a3;
   border-radius: .3rem;
   padding: .5rem;
+  display: block;
 }
 
 footer {
@@ -69,6 +93,11 @@ footer {
 
 h1 {
   font-size: 2rem;
+  margin: 0;
+}
+
+.logo h2 {
+  margin: 0;
 }
 
 .intro h2 {
@@ -88,11 +117,49 @@ h3 {
   font-size: 1.5rem;
 }
 
+
+
 @media only screen and (min-width: 608px) {
   header {
     display: grid;
     grid-template-areas:
       "logo nav"
       "banner banner"
+  }
+
+  .logo {
+    text-align: left;
+    grid-area: logo;
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  .banner {
+    grid-area: banner;
+  }
+
+  main {
+    display: grid;
+    grid-template-areas:
+      "intro intro intro"
+      "viewing gravel symbolism"
+  }
+
+  .intro {
+    grid-area: intro;
+  }
+
+  .viewing {
+    grid-area: viewing;
+  }
+
+  .gravel {
+    grid-area: gravel;
+  }
+
+  .symbolism {
+    grid-area: symbolism;
   }
 }
