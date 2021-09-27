@@ -29,12 +29,12 @@ img {
 
 main {
   display: grid;
-  justify-content: center;
   grid-template-areas:
     "intro"
     "viewing"
     "gravel"
-    "symbolism"
+    "symbolism";
+  align-items: center;
 }
 
 ul {
@@ -61,7 +61,6 @@ li a {
   border-top: .2rem solid #e2e2e2;
   border-bottom: .2rem solid #e2e2e2;
   margin: 1.5rem;
-  max-width: 30em;
   text-align: center;
 }
 
@@ -124,13 +123,13 @@ figure {
   margin: 0;
 }
 
+@media only screen and (min-width: 38em) {
 
-@media only screen and (min-width: 608px) {
   header {
     display: grid;
     grid-template-areas:
       "logo nav"
-      "banner banner"
+      "banner banner";
   }
 
   .logo {
@@ -147,48 +146,37 @@ figure {
   }
 
   ul {
-      text-align: right;
+    text-align: right;
   }
 
   main {
     display: grid;
-    grid-template-areas:
-      "intro intro intro"
-      "viewing gravel symbolism";
-    gap: 1rem;
+    grid-template-rows: 1fr 2fr;
   }
 
   .intro {
-    grid-area: intro;
+    grid-row: 1;
+    max-width: 30em;
   }
 
-  .viewing {
-    grid-area: viewing;
-  }
-
-  .gravel {
-    grid-area: gravel;
-  }
-
-  .symbolism {
-    grid-area: symbolism;
-  }
-
-  figure {
-    display: flex;
-    flex-direction: column;
+  section {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
     justify-content: space-between;
   }
 
-  figure img {
-    width: 100%;
+  .viewing {
+    grid-column: 1;
   }
 
-  figcaption p {
-    flex-grow: 1;
+  .gravel {
+    grid-column: 2;
   }
 
-
-
+  .symbolism {
+    grid-column: 3;
+  }
 
 }
