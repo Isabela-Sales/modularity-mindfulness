@@ -27,29 +27,31 @@ img {
   width: 100%;
 }
 
-main {
+section {
   display: grid;
   grid-template-areas:
-    "intro"
     "viewing"
     "gravel"
     "symbolism";
   align-items: center;
+  gap: 1rem;
 }
 
 ul {
   list-style-type: none;
   text-align: center;
+  margin: 0 0 1rem;
+  padding: 0;
 }
 
 li {
   display: inline-block;
-  padding: .5rem;
+  padding: 0 .5rem;
 }
 
 li a {
   color: #3783a3;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .logo {
@@ -57,10 +59,9 @@ li a {
 }
 
 .intro {
-  grid-area: intro;
   border-top: .2rem solid #e2e2e2;
   border-bottom: .2rem solid #e2e2e2;
-  margin: 1.5rem;
+  margin: 1.5rem 0;
   text-align: center;
 }
 
@@ -97,16 +98,21 @@ h1 {
 }
 
 .logo h2 {
+  font-size: 1rem;
   margin: 0;
 }
 
 .intro h2 {
   font-size: 2rem;
   font-weight: normal;
+  padding: 0 .5rem;
+  margin: 1rem 0;
 }
 
 .intro p {
-  font-size: 1.125rem;
+  font-size: 1rem;
+  padding: 0 1rem;
+  margin: 0 0 2rem;
 }
 
 h3 {
@@ -123,6 +129,10 @@ figure {
   margin: 0;
 }
 
+figcaption p {
+  margin: 0 0 1.5rem;
+}
+
 @media only screen and (min-width: 38em) {
 
   header {
@@ -135,6 +145,7 @@ figure {
   .logo {
     text-align: left;
     grid-area: logo;
+    margin: 0 .5rem;
   }
 
   nav {
@@ -143,40 +154,50 @@ figure {
 
   .banner {
     grid-area: banner;
+    margin: 1rem 0 1.5rem;
   }
 
   ul {
     text-align: right;
+    margin: 1rem 0;
   }
 
   main {
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 2.2fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .intro {
     grid-row: 1;
-    max-width: 30em;
+    grid-column: 2;
+    width: 30em;
+    margin: 0 0 1.5rem;
   }
 
   section {
     grid-row: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    grid-column: 1/-1;
+    display: flex;
     justify-content: space-between;
   }
 
-  .viewing {
-    grid-column: 1;
+  figure {
+    width: 33.3333%;
+    display: block;
+    padding: 0 .5rem;
   }
 
-  .gravel {
-    grid-column: 2;
+  .intro p {
+    margin: 0;
   }
 
-  .symbolism {
-    grid-column: 3;
+}
+
+@media only screen and (min-width: 62em) {
+
+  main {
+    grid-template-rows: 1fr 2.1fr;
   }
 
 }
