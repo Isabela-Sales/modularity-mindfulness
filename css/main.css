@@ -4,6 +4,7 @@ html {
   text-size-adjust: 100%;
   font-family: "Noto Sans", sans-serif;
   line-height: 1.5;
+  margin: 1rem;
 }
 
 *,
@@ -111,12 +112,17 @@ h1 {
 
 h3 {
   font-size: 1rem;
+  margin: 0 0 1.5rem;
 }
 
 .japanese {
   font-size: 1.5rem;
+  margin: 1.5rem 0 0;
 }
 
+figure {
+  margin: 0;
+}
 
 
 @media only screen and (min-width: 608px) {
@@ -140,11 +146,16 @@ h3 {
     grid-area: banner;
   }
 
+  ul {
+      text-align: right;
+  }
+
   main {
     display: grid;
     grid-template-areas:
       "intro intro intro"
-      "viewing gravel symbolism"
+      "viewing gravel symbolism";
+    gap: 1rem;
   }
 
   .intro {
@@ -162,4 +173,22 @@ h3 {
   .symbolism {
     grid-area: symbolism;
   }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  figure img {
+    width: 100%;
+  }
+
+  figcaption p {
+    flex-grow: 1;
+  }
+
+
+
+
 }
